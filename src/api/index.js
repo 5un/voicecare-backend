@@ -65,7 +65,7 @@ export default ({ config, db }) => {
 
   // perhaps expose some API metadata at the root
   api.post('/checkup/trigger', (req, res) => {
-    resetCheckup();
+    resetCheckup(hardcodedUser);
     client.calls.create({
       url: "https://handler.twilio.com/twiml/EH671ac1dc324aea903d49496da245e425",
       to: hardcodedUser.number,
